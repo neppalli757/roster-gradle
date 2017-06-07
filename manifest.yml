@@ -1,0 +1,16 @@
+--- 
+
+applications:
+- name: roster
+  memory: 1G
+  instances: 1
+  random-route: true
+  path: build/libs/roster.jar
+  buildpack: java_buildpack
+  services:
+  - rosterdb
+  - configserver
+  - roster_logs
+  - newrelic
+  env: 
+    SPRING_PROFILES_ACTIVE: dev
